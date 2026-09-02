@@ -141,9 +141,9 @@ html {
 
 
 .home-content h1 {
-    font-size: 80px;
-    width: 800px;
-    font-weight: 1200;
+    font-size: 90px;
+    width: 900px;
+    font-weight: 1700;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #F8FAFC;
 
@@ -154,7 +154,7 @@ html {
     font-size: 32px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 600;
-    color: #22D3EE;
+    color: #FEC544;
 }
 
 .home-content p {
@@ -197,8 +197,9 @@ html {
 
 
 .btn-box a:nth-child(2) {
-    background: #22D3EE;
+    background: #5a6270;
     color: black;
+    /* border: 2px solid #5a6270; */
 
 }
 
@@ -209,9 +210,8 @@ html {
 }
 
 .btn-box a:hover {
-    background-color: #22D3EE;
-    transition: #081b29;
-    transition: 1s;
+    background-color: #FEC544;
+    transform: translateY(-4px);
     color: black;
 
 }
@@ -263,7 +263,7 @@ html {
 
 .about {
     padding: 100px 10%;
-    background: transparent;
+    background: linear-gradient(180deg, rgb(7, 13, 27) 0%, rgb(10, 18, 35) 100%);
     color: #A9ADB8;
     display: flex;
     flex-direction: column;
@@ -306,33 +306,30 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 80px;
+    gap: 210px;
     width: 100%;
     max-width: 1200px;
     margin-top: 30px;
 }
 
 .aboutpic {
-    width: 460px;
+    width: 490px;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    padding-right: 40px;
-    box-sizing: border-box;
+    gap: 70px;
 }
 
 .aboutpic img {
     width: 100%;
     height: auto;
-    max-height: 560px;
+    max-height: 100vh;
     border-radius: 20px;
     object-fit: contain;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     filter: brightness(1.05) contrast(1.05);
     background: rgba(255, 255, 255, 0.03);
-    margin-right: 370px;
 
 }
 
@@ -342,7 +339,7 @@ html {
 
 .abouttext h3 {
     font-size: 56px;
-    color: #FEC544;
+    color: rgb(231, 208, 200);
     margin-bottom: 20px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 900;
@@ -355,7 +352,7 @@ html {
     font-size: 22px;
     line-height: 1.6;
     margin-bottom: 30px;
-    color: #A9ADB8;
+    color: #5a6270;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 600;
     width: 660px;
@@ -627,9 +624,8 @@ html {
 
 .contact-main {
     display: flex;
-    gap: 40px;
-    max-width: 1400px;
-    width: 100%;
+    gap: 180px;
+    width: 1500px;
     align-items: flex-start;
     position: relative;
     z-index: 3;
@@ -799,7 +795,7 @@ html {
 .footer {
     width: 100%;
     background: linear-gradient(180deg, #07152b 0%, #08101f 100%);
-    border-top: 1px solid rgba(0, 171, 240, 0.18);
+    border-top: 1.5px solid #5a6270;
     padding: 0 24px;
     box-sizing: border-box;
 }
@@ -814,12 +810,6 @@ html {
     padding: 30px 0 20px;
 }
 
-.footer-top-line {
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgb(254, 198, 68), transparent);
-}
 
 .footer-brand h3 {
     color: #d0d4db;
