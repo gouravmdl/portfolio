@@ -4,9 +4,10 @@
 }
 
 body {
-    background-color: #0B1220;
+    background-color: #0B1220
+
+};
       
-}
 
 html {
     scroll-behavior: smooth;
@@ -867,15 +868,15 @@ html {
 .back-to-top {
     color: #d0d4db;
     text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 23px;
+    font-weight: 800;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 9px 14px;
-    border-radius: 999px;
-    border: 1px solid rgba(0, 171, 240, 0.45);
-    background: rgba(0, 171, 240, 0.08);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);  
+    backdrop-filter: blur(16px);              
+    border: 1px solid rgba(255, 255, 255, 0.35);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     position: fixed;
     right: 22px;
@@ -896,7 +897,7 @@ html {
 }
 
 .back-to-top i {
-    font-size: 16px;
+    font-size: 59px;
     transition: transform 0.3s ease;
 }
 
