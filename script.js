@@ -2,6 +2,7 @@ const backToTopBtn = document.querySelector('.back-to-top');
 const educationSection = document.querySelector('#Education');
 const header = document.querySelector('.header');
 const navbar = document.querySelector('.navbar');
+const contactForm = document.querySelector('#contact-form');
 
 const toggleBackToTop = () => {
     if (!backToTopBtn || !educationSection) return;
@@ -78,7 +79,49 @@ const initMobileMenu = () => {
     syncMenuState();
 };
 
+const showButtonFeedback = (button, message, type, defaultText) => {
+    const icon = document.createElement('i');
+    icon.className = `bx ${type === 'success' ? 'bx-check-circle' : 'bx-error-circle'}`;
+    button.replaceChildren(icon, document.createTextNode(message));
+    button.classList.add(`submit-${type}`);
+
+    setTimeout(() => {
+        button.textContent = defaultText;
+        button.classList.remove(`submit-${type}`);
+    }, 5000);
+};
+
+const initContactForm = () => {
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const defaultButtonText = submitButton.textContent;
+        submitButton.disabled = true;
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { Accept: 'application/json' }
+            });
+
+            if (!response.ok) throw new Error('Message could not be sent');
+
+            showButtonFeedback(submitButton, 'Message sent successfully', 'success', defaultButtonText);
+            contactForm.reset();
+        } catch (error) {
+            showButtonFeedback(submitButton, 'Message could not be sent', 'error', defaultButtonText);
+        } finally {
+            submitButton.disabled = false;
+        }
+    });
+};
+
 window.addEventListener('scroll', toggleBackToTop);
 window.addEventListener('resize', toggleBackToTop);
 initMobileMenu();
+initContactForm();
 toggleBackToTop();

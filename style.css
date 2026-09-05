@@ -100,7 +100,7 @@ html {
 }
 
 .home {
-    min-height: 80vh;
+    min-height: 85vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -124,11 +124,12 @@ html {
     align-items: center;
     justify-content: center;
     width: 490px;
-    height: 725px;
+    height: 699px;
     border-radius: 14px;
     overflow: hidden;
-    border: 1.5px solid #414752;
-    margin-right: 130px;
+    /* border: 1.5px solid #414752; */
+    box-shadow: 24px 5px 44px rgba(0, 0, 0, 0.95);
+    margin-right: 132px;
     margin-top: 85px;
     
 }
@@ -139,7 +140,7 @@ html {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: contrast(1.08) saturate(1.05); 
+    filter: contrast(1.08) saturate(1.05) blur(0.5px); 
 }
 
 
@@ -348,9 +349,7 @@ html {
     border-radius: 20px;
     object-fit: contain;
     filter: brightness(1.05) contrast(1.05);
-    background: rgba(255, 255, 255, 0.03);
-
-}
+    background: rgba(255, 255, 255, 0.03);}
 
 .abouttext {
     flex: 1;
@@ -834,11 +833,43 @@ html {
     font-weight: 600;
     width: 250px;
     height: 66px;
+    box-sizing: border-box;
 }
 
 .submit-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(239, 200, 28, 0.3);
+}
+
+.submit-btn.submit-success {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 460px;
+    max-width: 100%;
+    white-space: nowrap;
+    background: #22D3EE;
+    color: #07101F;
+    font-size: 16px;
+}
+
+.submit-btn.submit-error {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 460px;
+    max-width: 100%;
+    white-space: nowrap;
+    background: #F87171;
+    color: #280808;
+    font-size: 16px;
+}
+
+.submit-btn.submit-success i,
+.submit-btn.submit-error i {
+    font-size: 21px;
 }
 
 
