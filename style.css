@@ -35,8 +35,8 @@ html {
 }
 
 .header img{
-    width: 240px;
-    height: auto;
+    width: auto;
+    height: 70px;
     object-fit: contain;
     margin-left: 50px;
     
@@ -1022,7 +1022,8 @@ html {
     }
 
     .header img {
-        width: 120px;
+        width: auto;
+        height: 55px;
         margin-right: 300px;
         
     }
@@ -1464,7 +1465,8 @@ html {
     }
 
     .header img {
-        width: 110px;
+        width: auto;
+        height: 48px;
     }
 
     .home {
