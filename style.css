@@ -108,7 +108,7 @@ html {
     padding-left: 10px;
     padding-right: 40px;
     box-sizing: border-box;
-    background-image: url(heroimg.webp);
+    background-image: url(Assets/heroimg.webp);
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: cover;
