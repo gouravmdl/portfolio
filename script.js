@@ -80,9 +80,7 @@ const initMobileMenu = () => {
 };
 
 const showButtonFeedback = (button, message, type, defaultText) => {
-    const icon = document.createElement('i');
-    icon.className = `bx ${type === 'success' ? 'bx-check-circle' : 'bx-error-circle'}`;
-    button.replaceChildren(icon, document.createTextNode(message));
+    button.textContent = message;
     button.classList.add(`submit-${type}`);
 
     setTimeout(() => {

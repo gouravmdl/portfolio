@@ -800,7 +800,7 @@ html {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 17px;
     padding: 12px 15px;
-    color: #d0d4db;
+    color: white;
     font-size: 16px;
     font-family: inherit;
     transition: all 0.3s ease;
@@ -845,20 +845,25 @@ html {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    width: 460px;
+    gap: 0;
+    min-width: 220px;
     max-width: 100%;
     white-space: nowrap;
-    background: #22D3EE;
-    color: #07101F;
-    font-size: 16px;
+    background: #1e7d57;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: 0.2s ease-in-out;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 22px;
+    box-shadow: 0 8px 20px rgba(33, 166, 108, 0.22);
 }
 
 .submit-btn.submit-error {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 0;
     width: 460px;
     max-width: 100%;
     white-space: nowrap;
@@ -866,13 +871,6 @@ html {
     color: #280808;
     font-size: 16px;
 }
-
-.submit-btn.submit-success i,
-.submit-btn.submit-error i {
-    font-size: 21px;
-}
-
-
 
 .contact-text {
     width: 700px;
@@ -1011,9 +1009,9 @@ html {
 }
 
 .back-to-top:hover {
-    color: #00abf0;
+    color: #A9ADB8;
     border-color: #b388ff;
-    background: rgba(232, 68, 254, 0.18);
+    background: #5a6270;
     transform: translateY(-2px);
 }
 
@@ -1159,13 +1157,13 @@ html {
     }
 
     .navbar a:hover {
-        color: #22D3EE;
+        color: #F87171;
         background: rgba(255, 255, 255, 0.06);
         transform: translateX(4px);
     }
 
     .number {
-        width: 100%;
+        width: 65%;
         margin-left: 0;
         display: flex;
         align-items: center;
@@ -1328,8 +1326,8 @@ html {
     }
 
     .skill-item {
-        width: 70px;
-        height: 120px;
+        width: 80%;
+        height: 130px;
         padding: 14px 10px;
         
     }
@@ -1523,7 +1521,7 @@ html {
     }
 
     .skill-item {
-        width: 100%;
+        width: 90%;
     }
 
     .social-media {
