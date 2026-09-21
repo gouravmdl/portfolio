@@ -38,7 +38,7 @@ html {
     width: auto;
     height: 70px;
     object-fit: contain;
-    margin-left: 50px;
+    margin-left: 70px;
     
 }
 
@@ -492,7 +492,7 @@ html {
 
 .skill-item {
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(254, 197, 68, 0.35);
+    border: 1px solid #5a6270;
     border-radius: 16px;
     padding: 30px;
     text-align: center;
