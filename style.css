@@ -16,6 +16,8 @@ html {
 .about,
 .skill,
 .education,
+.certification,
+.resume,
 .contact {
     scroll-margin-top: 110px;
 }
@@ -547,14 +549,15 @@ html {
 
 
 .education {
-    padding: 0 0;
-    height: 800px;
+    padding: 0 0 80px;
+    min-height: 850px;
     width: 100%;
     background: linear-gradient(135deg, rgb(7, 13, 27) 0%, rgb(10, 18, 35) 50%, rgb(7, 13, 27) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+    position: relative;
 }
 
 .heading3 {
@@ -609,53 +612,309 @@ html {
     gap: 40px;
     padding: 0 20px;
     margin-top: 110px;
-    height: 800px;
 }
 
 .education-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 30px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+    border-radius: 20px;
+    padding: 30px 32px;
     display: flex;
     align-items: center;
     gap: 25px;
     backdrop-filter: blur(10px);
-    border: 1px solid #414752;
-    
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(254, 197, 68, 0.42);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.22);
 }
 
 
 .education-icon {
-    width: 80px;
-    height: 80px;
-    background: #FEC544;
+    width: 86px;
+    height: 86px;
+    background: linear-gradient(135deg, #FEC544, #ffb800);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    box-shadow: 0 12px 30px rgba(254, 197, 68, 0.22);
 }
 
 .education-icon i {
-    font-size: 22px;
-    color: #8d95a5;
+    font-size: 28px;
+    color: #0f172a;
+}
+
+.education-content {
+    flex: 1;
 }
 
 .education-content h3 {
     color: #00abf0;
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .education-content h4 {
     color: #FEC544;
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .education-year {
+    color: #A9ADB8;
+    font-size: 14px;
+    font-weight: 500;
+    background: rgba(0, 171, 240, 0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 171, 240, 0.3);
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.education-content p {
+    color: #d0d4db;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.certification {
+    padding: 0 0 180px;
+    min-height: 1250px;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(7, 13, 27) 0%, rgb(10, 18, 35) 50%, rgb(7, 13, 27) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.heading5 {
+    font-size: 35px;
+    margin-bottom: -5px;
+    margin-top: 80px;
+    color: #FEC544;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    z-index: 999;
+}
+
+.line5 {
+    width: 190px;
+    height: 2px;
+    background: #414754;
+    margin: 18px auto 0;
+    position: relative;
+    z-index: 999;
+}
+
+.line5 span {
+    position: absolute;
+    width: 75px;
+    height: 2px;
+    background: #f5b82e;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.background-text5 {
+    position: absolute;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 100px;
+    font-weight: 800;
+    color: #151b28;
+    letter-spacing: 2px;
+    z-index: 1;
+    margin-top: 80px;
+    margin-right: 10px;
+}
+
+.resume {
+    padding: 0 0 120px;
+    min-height: 700px;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(7, 13, 27) 0%, rgb(10, 18, 35) 50%, rgb(7, 13, 27) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.heading6 {
+    font-size: 35px;
+    margin-bottom: -5px;
+    margin-top: 80px;
+    color: #FEC544;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    z-index: 999;
+}
+
+.line6 {
+    width: 190px;
+    height: 2px;
+    background: #414754;
+    margin: 18px auto 0;
+    position: relative;
+    z-index: 999;
+}
+
+.line6 span {
+    position: absolute;
+    width: 75px;
+    height: 2px;
+    background: #f5b82e;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.background-text6 {
+    position: absolute;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 100px;
+    font-weight: 800;
+    color: #151b28;
+    letter-spacing: 2px;
+    z-index: 1;
+    margin-top: 80px;
+    margin-right: 10px;
+}
+
+.resume-card {
+    width: min(1000px, 90%);
+    margin-top: 110px;
+    padding: 40px 38px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+    position: relative;
+    z-index: 1;
+}
+
+.resume-content h3 {
+    color: #00abf0;
+    font-size: 30px;
+    margin-bottom: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.resume-content p {
+    color: #d0d4db;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 760px;
+}
+
+.resume-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 25px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resume-btn.primary {
+    background: #FEC544;
+    color: #070d1b;
+    box-shadow: 0 12px 25px rgba(254, 197, 68, 0.2);
+}
+
+.resume-btn.secondary {
+    background: transparent;
+    color: #f8fafc;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.resume-btn:hover {
+    transform: translateY(-2px);
+}
+
+.certification-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+    margin-top: 130px;
+    align-items: stretch;
+}
+
+.certification-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #414752;
+    border-radius: 18px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 350px;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+}
+
+.certification-item:hover {
+    transform: translateY(-6px);
+    border-color: rgba(254, 197, 68, 0.5);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
+}
+
+.certification-badge {
+    width: 72px;
+    height: 72px;
+    background: rgba(254, 197, 68, 0.12);
+    border: 1px solid rgba(254, 197, 68, 0.32);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.certification-badge i {
+    font-size: 34px;
+    color: #FEC544;
+}
+
+.certification-content h3 {
+    color: #00abf0;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.certification-content h4 {
+    color: #FEC544;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.certification-year {
     color: #A9ADB8;
     font-size: 14px;
     font-weight: 500;
@@ -667,13 +926,99 @@ html {
     margin-bottom: 15px;
 }
 
-.education-content p {
+.certification-content p {
     color: #d0d4db;
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
 }
 
+.certification-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: 18px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 999px;
+    background: #FEC544;
+    color: #070d1b;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.certification-link:hover {
+    transform: translateY(-2px);
+    background: #ffd76b;
+    box-shadow: 0 10px 20px rgba(254, 197, 68, 0.25);
+}
+
+.cert-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.cert-modal.show {
+    display: flex;
+}
+
+.cert-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.82);
+}
+
+.cert-modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(900px, 90vw);
+    max-height: 90vh;
+    background: #0f172a;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    border-radius: 18px;
+    padding: 28px 18px 18px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.cert-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.cert-modal-dialog h3 {
+    color: #f8fafc;
+    margin-bottom: 18px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.cert-modal-dialog img {
+    display: block;
+    width: 100%;
+    max-height: 76vh;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #020817;
+}
 
 .contact {
     height: 1000px;
@@ -1010,7 +1355,7 @@ html {
 
 .back-to-top:hover {
     color: #A9ADB8;
-    border-color: #b388ff;
+    border-color: transparent;
     background: #5a6270;
     transform: translateY(-2px);
 }
@@ -1261,6 +1606,7 @@ html {
     .about,
     .skill,
     .education,
+    .certification,
     .contact {
         height: auto;
         padding: 36px 16px 42px;
@@ -1269,7 +1615,8 @@ html {
     .heading1,
     .heading2,
     .heading3,
-    .heading4 {
+    .heading4,
+    .heading5 {
         font-size: 28px;
         margin-top: 0;
     }
@@ -1363,6 +1710,30 @@ html {
     }
 
     .education-content p {
+        font-size: 14px;
+    }
+
+    .certification-container {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+        padding: 0;
+        gap: 18px;
+    }
+
+    .certification-item {
+        padding: 18px 16px;
+        border-radius: 12px;
+    }
+
+    .certification-content h3 {
+        font-size: 20px;
+    }
+
+    .certification-content h4 {
+        font-size: 16px;
+    }
+
+    .certification-content p {
         font-size: 14px;
     }
 
