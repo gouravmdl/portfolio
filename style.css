@@ -1133,7 +1133,7 @@ html {
 }
 
 .form-group input {
-    height: 30px;
+    height: 55px;
     resize: none;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1695,18 +1695,20 @@ html {
 
     .skill-item {
         width: 80%;
-        height: 130px;
+        height: 180px;
         padding: 14px 10px;
         
     }
 
     .skill-item i {
-        font-size: 36px;
+        font-size: 48px;
         padding: 6px 10px;
     }
 
     .skill-label {
-        font-size: 13px;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
     }
 
     .education-container {
@@ -1794,9 +1796,9 @@ html {
 
     .form-group input,
     .form-group textarea {
-        border-radius: 12px;
-        padding: 10px 12px;
-        font-size: 14px;
+        border-radius: 15px;
+        padding: 25px 15px;
+        font-size: 17px;
     }
 
     .submit-btn {
@@ -1984,6 +1986,15 @@ html {
 
     .social-media {
         gap: 8px;
+    }
+
+    .heading6 {
+        margin-top: 20px;
+    }
+
+    .resume-card {
+        margin-top: 70px;
+
     }
 }
 
