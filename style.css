@@ -1240,7 +1240,7 @@ html {
 
 @media (max-width: 767px) {
     html {
-        scroll-padding-top: 160px;
+        scroll-padding-top: 90px;
     }
 
     body {
@@ -1326,23 +1326,6 @@ html {
     .btn-box a {
         width: 48%;
         font-size: 15px;
-    }
-
-    .container-icon {
-        width: 100%;
-        margin: 0;
-        justify-content: center;
-    }
-
-    .home-sci {
-        width: min(320px, 92vw);
-        padding: 10px 12px;
-    }
-
-    .home-sci a {
-        width: 42px;
-        height: 42px;
-        font-size: 18px;
     }
 
     .photo {
@@ -1676,20 +1659,20 @@ html {
         top: 0;
         left: 0;
         overflow: visible;
-        padding: 12px 16px 10px;
-        height: 90px;
+        padding: 10px 16px;
+        height: 72px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 10px;
+        gap: 0;
         z-index: 1000;
     }
 
     .header img {
         width: auto;
-        height: 55px;
-        margin-right: 300px;
-        
+        height: 48px;
+        margin: 0 0 0 15px;
+        align-self: flex-start;
     }
 
     .mobile-menu-btn {
@@ -1744,22 +1727,22 @@ html {
 
     .navbar {
         position: fixed;
-        top: 90px;
+        top: 72px;
         left: 0;
-        width: min(220px, 72vw);
+        width: min(280px, 84vw);
         height: auto;
-        max-height: calc(100vh - 104px);
+        max-height: calc(100vh - 72px);
+        max-height: calc(100dvh - 72px);
         margin: 0;
         flex-direction: column;
         align-items: flex-start;
-        gap: 2px;
+        gap: 4px;
         text-align: left;
         border: 1px solid rgba(255,255,255,0.08);
         background: rgba(7, 13, 27, 0.98);
         border-radius: 0 16px 16px 0;
-        padding: 10px;
+        padding: 12px;
         opacity: 0;
-        max-height: none;
         overflow-y: auto;
         visibility: hidden;
         pointer-events: none;
@@ -1782,8 +1765,10 @@ html {
     .navbar a {
         margin: 0;
         width: 100%;
-        padding: 5px 8px;
-        display: block;
+        min-height: 44px;
+        padding: 10px 8px;
+        display: flex;
+        align-items: center;
         box-sizing: border-box;
         font-size: 15px;
         color: #dfe7f4;
@@ -1817,7 +1802,7 @@ html {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding: 108px 16px 24px;
+        padding: 96px 16px 32px;
         min-height: auto;
         text-align: left;
         background-position: center;
@@ -1864,24 +1849,11 @@ html {
         display: none;
     }
 
-    .home-sci {
-        width: 100%;
-        max-width: 220px;
-        border-radius: 16px;
-        justify-content: space-between;
-        padding: 10px 12px;
-    }
-
-    .home-sci a {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-
     .Madara {
         width: 100%;
         max-width: 360px;
         height: auto;
+        aspect-ratio: 0.7;
         margin: 19px auto 0;
         border-radius: 18px;
     }
@@ -1889,7 +1861,9 @@ html {
     .background-text,
     .background-text2,
     .background-text3,
-    .background-text4 {
+    .background-text4,
+    .background-text5,
+    .background-text6 {
         display: none;
     }
 
@@ -1897,16 +1871,19 @@ html {
     .skill,
     .education,
     .certification,
+    .resume,
     .contact {
         height: auto;
-        padding: 36px 16px 42px;
+        min-height: 0;
+        padding: 48px 16px;
     }
 
     .heading1,
     .heading2,
     .heading3,
     .heading4,
-    .heading5 {
+    .heading5,
+    .heading6 {
         font-size: 28px;
         margin-top: 0;
     }
@@ -1959,14 +1936,16 @@ html {
     }
 
     .box {
+        width: 100%;
         gap: 14px;
     }
 
     .skill-item {
-        width: 80%;
-        height: 130px;
+        width: calc(50% - 7px);
+        min-width: 0;
+        height: 120px;
         padding: 14px 10px;
-        
+        box-sizing: border-box;
     }
 
     .skill-item i {
@@ -1979,6 +1958,9 @@ html {
     }
 
     .education-container {
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        max-width: 700px;
         margin-top: 30px;
         height: auto;
         padding: 0;
@@ -2004,10 +1986,38 @@ html {
     }
 
     .certification-container {
+        width: 100%;
         grid-template-columns: 1fr;
         margin-top: 30px;
         padding: 0;
         gap: 18px;
+    }
+
+    .resume-card {
+        width: 100%;
+        margin-top: 32px;
+        padding: 24px 20px;
+        box-sizing: border-box;
+    }
+
+    .resume-content h3 {
+        font-size: 24px;
+    }
+
+    .resume-content p {
+        font-size: 16px;
+    }
+
+    .resume-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .resume-btn {
+        width: 100%;
+        min-height: 48px;
+        box-sizing: border-box;
     }
 
     .certification-item {
@@ -2101,7 +2111,7 @@ html {
     }
 
     .contact-item span {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .contact i {
@@ -2160,11 +2170,11 @@ html {
     }
 
     .home {
-        padding-top: 150px;
+        padding-top: 88px;
     }
 
     .home-content h1 {
-        font-size: 32px;
+        font-size: clamp(30px, 9vw, 38px);
     }
 
     .home-content h3 {
@@ -2182,7 +2192,7 @@ html {
     }
 
     .skill-item {
-        width: 90%;
+        width: calc(50% - 7px);
     }
 
     .social-media {
@@ -2190,4 +2200,17 @@ html {
     }
 }
 
+@media (max-width: 359px) {
+    .skill-item {
+        width: 100%;
+    }
 
+    .home-content .btn-box {
+        gap: 8px;
+    }
+
+    .btn-box a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
