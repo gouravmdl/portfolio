@@ -1,12 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-}
-
-img {
-    max-width: 100%;
-    display: block;
 }
 
 body {
@@ -1133,7 +1127,7 @@ html {
 }
 
 .form-group input {
-    height: 55px;
+    height: 30px;
     resize: none;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1242,6 +1236,296 @@ html {
     font-size: 20px;
     font-weight: 300;
     color: #8d95a5;
+}
+
+@media (max-width: 767px) {
+    html {
+        scroll-padding-top: 160px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .header {
+        height: auto;
+        position: sticky;
+        top: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 14px 16px;
+    }
+
+    .header img {
+        margin-left: 0;
+        height: 52px;
+    }
+
+    .navbar {
+        width: 100%;
+        margin-right: 0;
+        padding: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px 10px;
+        font-size: 14px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+        margin: 0;
+        padding: 4px 6px;
+    }
+
+    .number {
+        margin-left: 0;
+        padding: 8px 10px;
+    }
+
+    .number a {
+        font-size: 13px;
+    }
+
+    .home {
+        flex-direction: column;
+        justify-content: flex-start;
+        min-height: auto;
+        padding: 110px 18px 30px;
+        gap: 24px;
+    }
+
+    .home-content {
+        width: 100%;
+        margin-top: 0;
+        padding-left: 0;
+    }
+
+    .home-content h3 {
+        font-size: 22px;
+    }
+
+    .home-content h1 {
+        width: 100%;
+        font-size: clamp(2.5rem, 12vw, 4rem);
+        line-height: 1.05;
+    }
+
+    .home-content p {
+        width: 100%;
+        font-size: 18px;
+        margin-bottom: 26px;
+    }
+
+    .btn-box {
+        width: 100%;
+        max-width: 300px;
+        gap: 10px;
+    }
+
+    .btn-box a {
+        width: 48%;
+        font-size: 15px;
+    }
+
+    .container-icon {
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .home-sci {
+        width: min(320px, 92vw);
+        padding: 10px 12px;
+    }
+
+    .home-sci a {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .photo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Madara {
+        width: min(320px, 82vw);
+        height: auto;
+        margin: 0;
+        box-shadow: 0 18px 34px rgba(0, 0, 0, 0.45);
+    }
+
+    .about,
+    .skill,
+    .education,
+    .certification,
+    .resume,
+    .contact {
+        min-height: auto;
+        height: auto;
+    }
+
+    .about,
+    .skill,
+    .education,
+    .certification,
+    .resume,
+    .contact {
+        padding: 60px 18px 50px;
+    }
+
+    .background-text,
+    .background-text2,
+    .background-text3,
+    .background-text4,
+    .background-text5,
+    .background-text6 {
+        font-size: 58px;
+        margin-top: 0;
+        opacity: 0.7;
+    }
+
+    .aboutwrap {
+        flex-direction: column;
+        gap: 28px;
+        margin-top: 60px;
+    }
+
+    .aboutpic {
+        width: 100%;
+    }
+
+    .aboutpic img {
+        width: min(320px, 80vw);
+    }
+
+    .abouttext h3 {
+        width: 100%;
+        height: auto;
+        font-size: 2rem;
+    }
+
+    .abouttext p {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .aboutlist p {
+        font-size: 18px;
+    }
+
+    .box {
+        gap: 18px;
+        margin-top: 30px;
+    }
+
+    .skill-item {
+        width: calc(50% - 12px);
+        min-width: 130px;
+        height: 120px;
+        padding: 16px;
+    }
+
+    .skill-item i {
+        font-size: 42px;
+    }
+
+    .education-container,
+    .certification-container {
+        grid-template-columns: 1fr;
+        padding: 0;
+        margin-top: 60px;
+        gap: 24px;
+    }
+
+    .education-item,
+    .certification-item {
+        padding: 20px 18px;
+    }
+
+    .education-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .education-content h3 {
+        font-size: 20px;
+    }
+
+    .education-content h4 {
+        font-size: 16px;
+    }
+
+    .education-content p {
+        font-size: 15px;
+    }
+
+    .certification-item {
+        min-height: auto;
+    }
+
+    .resume-card {
+        margin-top: 60px;
+        padding: 24px 20px;
+    }
+
+    .resume-content h3 {
+        font-size: 24px;
+    }
+
+    .resume-content p {
+        font-size: 16px;
+    }
+
+    .resume-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .resume-btn {
+        width: 100%;
+    }
+
+    .contact-main {
+        flex-direction: column;
+        width: 100%;
+        gap: 24px;
+        padding: 0;
+        margin-top: 40px;
+    }
+
+    .contact-form-section h3,
+    .contact-text h3,
+    .contact-text p {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .contact-form-section h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .contact-text {
+        width: 100%;
+        height: auto;
+    }
+
+    .contact-text h3 {
+        font-size: 2rem;
+    }
+
+    .contact-text p {
+        font-size: 16px;
+    }
+
+    .submit-btn,
+    .submit-btn.submit-error {
+        width: 100%;
+    }
 }
 
 .contact-item span {
@@ -1387,10 +1671,6 @@ html {
         overflow-x: hidden;
     }
 
-    html {
-        scroll-padding-top: 90px;
-    }
-
     .header {
         position: fixed;
         top: 0;
@@ -1399,9 +1679,8 @@ html {
         padding: 12px 16px 10px;
         height: 90px;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
         gap: 10px;
         z-index: 1000;
     }
@@ -1409,9 +1688,8 @@ html {
     .header img {
         width: auto;
         height: 55px;
-        margin: 0;
-        margin-left: 0;
-        max-width: 150px;
+        margin-right: 300px;
+        
     }
 
     .mobile-menu-btn {
@@ -1492,13 +1770,6 @@ html {
                     visibility 0.28s ease;
         box-shadow: 12px 0 28px rgba(0, 0, 0, 0.28);
         backdrop-filter: blur(8px);
-    }
-
-    .navbar:not(.mobile-open) {
-        width: 0;
-        padding: 0;
-        border: none;
-        overflow: hidden;
     }
 
     .navbar.mobile-open {
@@ -1618,9 +1889,7 @@ html {
     .background-text,
     .background-text2,
     .background-text3,
-    .background-text4,
-    .background-text5,
-    .background-text6 {
+    .background-text4 {
         display: none;
     }
 
@@ -1695,20 +1964,18 @@ html {
 
     .skill-item {
         width: 80%;
-        height: 180px;
+        height: 130px;
         padding: 14px 10px;
         
     }
 
     .skill-item i {
-        font-size: 48px;
+        font-size: 36px;
         padding: 6px 10px;
     }
 
     .skill-label {
-        font-size: 20px;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+        font-size: 13px;
     }
 
     .education-container {
@@ -1796,9 +2063,9 @@ html {
 
     .form-group input,
     .form-group textarea {
-        border-radius: 15px;
-        padding: 25px 15px;
-        font-size: 17px;
+        border-radius: 12px;
+        padding: 10px 12px;
+        font-size: 14px;
     }
 
     .submit-btn {
@@ -1829,10 +2096,8 @@ html {
     .contact-item p {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
         flex-wrap: wrap;
-        width: 100%;
-        max-width: 100%;
     }
 
     .contact-item span {
@@ -1885,70 +2150,6 @@ html {
 
 @media (max-width: 480px) {
     .header {
-        padding: 10px 12px 8px;
-        height: 80px;
-    }
-
-    .header img {
-        height: 44px;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .home {
-        padding: 96px 14px 18px;
-    }
-
-    .home-content h1 {
-        font-size: 32px;
-    }
-
-    .home-content p {
-        font-size: 15px;
-    }
-
-    .home-content .btn-box {
-        gap: 10px;
-    }
-
-    .btn-box a {
-        width: 48%;
-        min-width: 0;
-    }
-
-    .about,
-    .skill,
-    .education,
-    .certification,
-    .resume,
-    .contact {
-        padding-left: 14px;
-        padding-right: 14px;
-    }
-
-    .abouttext h3 {
-        font-size: 23px;
-    }
-
-    .skill-item {
-        width: 100%;
-    }
-
-    .resume-card {
-        padding: 24px 18px;
-    }
-
-    .resume-btn {
-        width: 100%;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
         padding-left: 14px;
         padding-right: 14px;
     }
@@ -1986,15 +2187,6 @@ html {
 
     .social-media {
         gap: 8px;
-    }
-
-    .heading6 {
-        margin-top: 20px;
-    }
-
-    .resume-card {
-        margin-top: 70px;
-
     }
 }
 
