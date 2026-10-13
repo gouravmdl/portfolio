@@ -86,7 +86,7 @@ const showButtonFeedback = (button, message, type, defaultText) => {
     setTimeout(() => {
         button.textContent = defaultText;
         button.classList.remove(`submit-${type}`);
-    }, 5000);
+    }, 3000);
 };
 
 const initContactForm = () => {
@@ -125,19 +125,15 @@ const initContactForm = () => {
     });
 };
 
-/* =====================================================
-   SUCCESS UI CONTROLLER
-   Shows the hidden success card after a form submission.
-   ===================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  /* ---------- Element References ---------- */
+ 
   const successCard = document.getElementById('successCard');
   const formSection = document.querySelector('.contact-form-section');
   let successTimer;
   let hideTimer;
 
-  /* ---------- Public API ---------- */
+
   window.showSuccessMessage = function () {
     if (!successCard) return;
     window.clearTimeout(successTimer);

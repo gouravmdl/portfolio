@@ -483,7 +483,7 @@ html {
 
 
 .skill-content {
-    width: min(100%, 1100px);
+    width: min(100%, 1200px);
     display: flex;
     justify-content: center;
     margin-top: 48px;
@@ -492,37 +492,38 @@ html {
 
 .box {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     width: 100%;
-    gap: 18px;
+    gap: 22px;
     margin: 0;
 }
 
 .skill-item {
     box-sizing: border-box;
     min-width: 0;
-    min-height: 200px;
-    padding: 22px 16px;
-    background: linear-gradient(155deg, rgba(24, 35, 57, 0.92), rgba(13, 22, 39, 0.92));
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    border-radius: 18px;
+    grid-column: span 2;
+    min-height: 244px;
+    padding: 28px 22px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #414752;
+    border-radius: 22px;
     text-align: center;
-    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.23);
 }
 
+
 .skill-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-7px);
     border-color: rgba(254, 197, 68, 0.58);
-    background: linear-gradient(155deg, rgba(30, 42, 64, 0.98), rgba(15, 25, 43, 0.98));
-    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32), 0 0 24px rgba(254, 197, 68, 0.08);
+
 }
 
 
@@ -530,14 +531,14 @@ html {
     display: grid;
     place-items: center;
     box-sizing: border-box;
-    width: 64px;
-    height: 64px;
+    width: 88px;
+    height: 88px;
     padding: 0;
     border: 1px solid rgba(254, 197, 68, 0.24);
-    border-radius: 16px;
+    border-radius: 20px;
     background: rgba(254, 197, 68, 0.08);
     color: #fec544;
-    font-size: 36px;
+    font-size: 48px;
     transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease;
 }
 
@@ -552,7 +553,7 @@ html {
 .skill-label {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 15px;
+    font-size: 19px;
     font-weight: 700;
     color: #e2e8f0;
     letter-spacing: 0.02em;
@@ -560,14 +561,18 @@ html {
 
 @media (max-width: 1024px) {
     .box {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .skill-item {
+        min-height: 224px;
     }
 }
 
 
 .education {
-    padding: 0 0 80px;
-    min-height: 850px;
+    padding: 0 24px 88px;
+    min-height: 760px;
     width: 100%;
     background: linear-gradient(135deg, rgb(7, 13, 27) 0%, rgb(10, 18, 35) 50%, rgb(7, 13, 27) 100%);
     display: flex;
@@ -614,95 +619,149 @@ html {
     font-weight: 800;
     color: #151b28;
     letter-spacing: 2px;
-    z-index: 1;
-    margin-top: 80px;
-    margin-right: 10px;
+    z-index: 0;
+    top: 76px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.24;
+    pointer-events: none;
 }
 
 
 
 .education-container {
-    max-width: 1200px;
-    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    padding: 0 20px;
-    margin-top: 110px;
+    gap: 28px;
+    box-sizing: border-box;
+    width: min(100%, 1050px);
+    padding: 0 0 0 48px;
+    margin-top: 56px;
+    position: relative;
+    z-index: 1;
 }
+
 
 .education-item {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+    min-width: 0;
+    min-height: 270px;
+    box-sizing: border-box;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(148, 163, 184, 0.18);
     border-radius: 20px;
-    padding: 30px 32px;
+    padding: 36px 38px;
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 28px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(148, 163, 184, 0.22);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+
 
 .education-item:hover {
-    transform: translateY(-4px);
-    border-color: rgba(254, 197, 68, 0.42);
-    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.22);
+    transform: translateX(4px);
+    border-color: rgba(254, 197, 68, 0.38);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
 }
 
-
 .education-icon {
-    width: 86px;
-    height: 86px;
-    background: linear-gradient(135deg, #FEC544, #ffb800);
-    border-radius: 50%;
+    width: 82px;
+    height: 82px;
+    box-sizing: border-box;
+    background: rgba(254, 197, 68, 0.08);
+    border: 1px solid rgba(254, 197, 68, 0.24);
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 12px 30px rgba(254, 197, 68, 0.22);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .education-icon i {
-    font-size: 28px;
-    color: #0f172a;
+    font-size: 35px;
+    color: #fec544;
 }
 
 .education-content {
     flex: 1;
+    min-width: 0;
 }
 
 .education-content h3 {
-    color: #00abf0;
-    font-size: 24px;
+    color: #f8fafc;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 26px;
     font-weight: 700;
-    margin-bottom: 8px;
+    line-height: 1.3;
+    margin-bottom: 10px;
 }
 
 .education-content h4 {
-    color: #FEC544;
-    font-size: 18px;
+    color: #cbd5e1;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 17px;
     font-weight: 600;
-    margin-bottom: 12px;
+    line-height: 1.55;
+    margin-bottom: 14px;
 }
 
 .education-year {
-    color: #A9ADB8;
+    display: inline-flex;
+    align-items: center;
+    color: #f7d77e;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 14px;
-    font-weight: 500;
-    background: rgba(0, 171, 240, 0.1);
-    padding: 5px 12px;
+    font-weight: 650;
+    letter-spacing: 0.02em;
+    background: rgba(254, 197, 68, 0.08);
+    padding: 8px 14px;
     border-radius: 20px;
-    border: 1px solid rgba(0, 171, 240, 0.3);
-    display: inline-block;
-    margin-bottom: 15px;
+    border: 1px solid rgba(254, 197, 68, 0.22);
+    margin-bottom: 16px;
 }
 
 .education-content p {
-    color: #d0d4db;
+    color: #aeb9ca;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.75;
     margin: 0;
+}
+
+@media (max-width: 480px) {
+    .education-container {
+        padding-left: 32px;
+        margin-top: 38px;
+    }
+
+    .education-container::before {
+        left: 9px;
+    }
+
+    .education-item {
+        display: block;
+        padding: 22px 18px;
+    }
+
+    .education-item::before {
+        left: -28px;
+        top: 28px;
+    }
+
+    .education-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 18px;
+        border-radius: 15px;
+    }
+
+    .education-icon i {
+        font-size: 24px;
+    }
 }
 
 .certification {
@@ -1458,14 +1517,24 @@ html {
     .skill-item {
         width: auto;
         min-width: 0;
-        min-height: 148px;
-        padding: 18px 12px;
+        grid-column: auto;
+        min-height: 184px;
+        padding: 22px 14px;
+    }
+
+    .skill-item:nth-child(4),
+    .skill-item:nth-child(5) {
+        grid-column: auto;
     }
 
     .skill-item i {
-        width: 56px;
-        height: 56px;
-        font-size: 32px;
+        width: 70px;
+        height: 70px;
+        font-size: 38px;
+    }
+
+    .skill-label {
+        font-size: 16px;
     }
 
     .education-container,
@@ -1476,6 +1545,16 @@ html {
         gap: 24px;
     }
 
+    .education-container {
+        max-width: 850px;
+        margin-top: 48px;
+        padding: 0 0 0 42px;
+    }
+
+    .education-container::before {
+        left: 13px;
+    }
+
     .education-item,
     .certification-item {
         padding: 20px 18px;
@@ -1484,10 +1563,20 @@ html {
     .education-item {
         flex-direction: column;
         align-items: flex-start;
+        min-height: 0;
+        gap: 20px;
+        padding: 30px 26px;
+        border-radius: 20px;
+    }
+
+    .education-icon {
+        width: 76px;
+        height: 76px;
+        border-radius: 20px;
     }
 
     .education-content h3 {
-        font-size: 20px;
+        font-size: 23px;
     }
 
     .education-content h4 {
@@ -1495,7 +1584,7 @@ html {
     }
 
     .education-content p {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .certification-item {
@@ -1701,11 +1790,7 @@ html {
     transform: translateY(0);
 }
 
-/* =====================================================
-   SUCCESS UI — MESSAGE CARD
-   ===================================================== */
 
-/* ---------- Base (hidden by default) ---------- */
 .message-card {
   display: none;
   position: relative;
@@ -1730,7 +1815,7 @@ html {
     0 1px 0 rgba(255, 255, 255, 0.04) inset;
 }
 
-/* ---------- Shown state (add this class via JS) ---------- */
+
 .message-card.show {
   display: block;
   animation: cardIn 0.3s ease-out both;
@@ -1781,9 +1866,6 @@ html {
   text-transform: uppercase;
 }
 
-/* =====================================================
-   SUCCESS ICON
-   ===================================================== */
 .message-card .icon-container {
   width: 82px;
   height: 82px;
@@ -1837,9 +1919,7 @@ html {
   animation: checkIn 0.7s cubic-bezier(0.2, 0.75, 0.25, 1) 0.2s both;
 }
 
-/* =====================================================
-   SUCCESS TEXT
-   ===================================================== */
+
 .message-card h1 {
   color: #f8fafc;
   font-size: clamp(1.8rem, 3vw, 2.15rem);
@@ -1857,9 +1937,6 @@ html {
   line-height: 1.6;
 }
 
-/* =====================================================
-   DETAILS BADGE
-   ===================================================== */
 .message-card .details {
   background: rgba(74, 222, 128, 0.06);
   border: 1px solid rgba(74, 222, 128, 0.14);
@@ -1933,21 +2010,6 @@ html {
     animation: none;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2246,19 +2308,19 @@ html {
     .skill-item {
         width: auto;
         min-width: 0;
-        min-height: 140px;
-        padding: 16px 10px;
+        min-height: 184px;
+        padding: 22px 14px;
     }
 
     .skill-item i {
-        width: 54px;
-        height: 54px;
-        font-size: 36px;
+        width: 70px;
+        height: 70px;
+        font-size: 38px;
         padding: 0;
     }
 
     .skill-label {
-        font-size: 13px;
+        font-size: 16px;
     }
 
     .education-container {
@@ -2273,8 +2335,20 @@ html {
     .education-item {
         flex-direction: column;
         align-items: flex-start;
-        padding: 18px 16px;
-        border-radius: 12px;
+        min-height: 0;
+        gap: 18px;
+        padding: 24px 22px;
+        border-radius: 20px;
+    }
+
+    .education-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 19px;
+    }
+
+    .education-icon i {
+        font-size: 30px;
     }
 
     .education-content h3 {
@@ -2513,6 +2587,11 @@ html {
 
     .skill-item {
         width: auto;
+    }
+
+    .skill-item:nth-child(4),
+    .skill-item:nth-child(5) {
+        grid-column: auto;
     }
 
     .home-content .btn-box {
