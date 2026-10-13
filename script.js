@@ -133,16 +133,16 @@ const initContactForm = () => {
 document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Element References ---------- */
   const successCard = document.getElementById('successCard');
-  const backBtn = document.getElementById('backBtn');
   const formSection = document.querySelector('.contact-form-section');
+  let successTimer;
+  let hideTimer;
 
   /* ---------- Public API ---------- */
-  /**
-   * Show the success card.
-   * Call this after a successful form submission.
-   */
   window.showSuccessMessage = function () {
     if (!successCard) return;
+    window.clearTimeout(successTimer);
+    window.clearTimeout(hideTimer);
+    successCard.classList.remove('is-hiding');
 
     if (formSection) {
       formSection.style.display = 'none';
@@ -152,29 +152,22 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => {
       successCard.classList.add('show');
     });
+    successTimer = window.setTimeout(window.hideSuccessMessage, 4000);
   };
 
-  /**
-   * Hide the success card.
-   * Call this from "Send another" or after a timeout.
-   */
   window.hideSuccessMessage = function () {
     if (!successCard) return;
+    window.clearTimeout(successTimer);
     successCard.classList.remove('show');
-    setTimeout(() => {
+    successCard.classList.add('is-hiding');
+    hideTimer = window.setTimeout(() => {
       successCard.style.display = 'none';
+      successCard.classList.remove('is-hiding');
       if (formSection) {
         formSection.style.display = 'block';
       }
     }, 300);
   };
-
-  /* ---------- Back Button ---------- */
-  if (backBtn) {
-    backBtn.addEventListener('click', () => {
-      window.hideSuccessMessage();
-    });
-  }
 });
 
 window.addEventListener('scroll', toggleBackToTop);
