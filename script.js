@@ -110,6 +110,13 @@ const initContactForm = () => {
 
             showButtonFeedback(submitButton, 'Message sent successfully', 'success', defaultButtonText);
             contactForm.reset();
+            const formSection = contactForm.closest('.contact-form-section');
+            if (formSection) {
+                formSection.style.display = 'none';
+            }
+            if (window.showSuccessMessage) {
+                window.showSuccessMessage();
+            }
         } catch (error) {
             showButtonFeedback(submitButton, 'Message could not be sent', 'error', defaultButtonText);
         } finally {
@@ -117,6 +124,58 @@ const initContactForm = () => {
         }
     });
 };
+
+/* =====================================================
+   SUCCESS UI CONTROLLER
+   Shows the hidden success card after a form submission.
+   ===================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  /* ---------- Element References ---------- */
+  const successCard = document.getElementById('successCard');
+  const backBtn = document.getElementById('backBtn');
+  const formSection = document.querySelector('.contact-form-section');
+
+  /* ---------- Public API ---------- */
+  /**
+   * Show the success card.
+   * Call this after a successful form submission.
+   */
+  window.showSuccessMessage = function () {
+    if (!successCard) return;
+
+    if (formSection) {
+      formSection.style.display = 'none';
+    }
+
+    successCard.style.display = 'block';
+    requestAnimationFrame(() => {
+      successCard.classList.add('show');
+    });
+  };
+
+  /**
+   * Hide the success card.
+   * Call this from "Send another" or after a timeout.
+   */
+  window.hideSuccessMessage = function () {
+    if (!successCard) return;
+    successCard.classList.remove('show');
+    setTimeout(() => {
+      successCard.style.display = 'none';
+      if (formSection) {
+        formSection.style.display = 'block';
+      }
+    }, 300);
+  };
+
+  /* ---------- Back Button ---------- */
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      window.hideSuccessMessage();
+    });
+  }
+});
 
 window.addEventListener('scroll', toggleBackToTop);
 window.addEventListener('resize', toggleBackToTop);

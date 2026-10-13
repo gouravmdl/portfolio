@@ -1649,6 +1649,227 @@ html {
     transform: translateY(0);
 }
 
+/* =====================================================
+   SUCCESS UI — MESSAGE CARD
+   ===================================================== */
+
+/* ---------- Base (hidden by default) ---------- */
+.message-card {
+  display: none;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 3rem 2rem 2.8rem;
+  border-radius: 2.5rem;
+  text-align: center;
+  box-shadow:
+    0 30px 50px -20px rgba(0, 40, 80, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.7) inset,
+    0 0 0 1px rgba(210, 225, 240, 0.5);
+  transition: all 0.4s cubic-bezier(0.34, 1.3, 0.64, 1);
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ---------- Shown state (add this class via JS) ---------- */
+.message-card.show {
+  display: block;
+  animation: cardIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =====================================================
+   SUCCESS ICON
+   ===================================================== */
+.message-card .icon-container {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1.8rem;
+  background: linear-gradient(135deg, #1e3c5c, #14314a);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 18px 28px -8px rgba(20, 60, 100, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  position: relative;
+  animation: popIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+}
+
+.message-card .icon-container::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(100, 180, 255, 0.4);
+  animation: softPulse 2.4s infinite ease-in-out;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.message-card .icon-container i {
+  font-size: 3.4rem;
+  color: #ffffff;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* =====================================================
+   SUCCESS TEXT
+   ===================================================== */
+.message-card h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #0b2a41;
+  margin-bottom: 0.6rem;
+}
+
+.message-card .subhead {
+  font-size: 1.05rem;
+  color: #4b637a;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* =====================================================
+   DETAILS BADGE
+   ===================================================== */
+.message-card .details {
+  background: rgba(235, 245, 255, 0.75);
+  border-radius: 2rem;
+  padding: 0.9rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #1f4e7a;
+  border: 1px solid rgba(130, 180, 230, 0.4);
+  margin-bottom: 2rem;
+}
+
+.message-card .details i {
+  color: #2a7faa;
+}
+
+.message-card .details span {
+  font-weight: 400;
+  color: #3e5e7a;
+}
+
+/* =====================================================
+   BACK BUTTON
+   ===================================================== */
+.message-card .back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #ffffff, #f2f9ff);
+  color: #1a3c5c;
+  font-family: inherit;
+  font-size: 0.98rem;
+  font-weight: 600;
+  padding: 0.85rem 2.2rem;
+  border: 1px solid #b4d2f0;
+  border-radius: 3rem;
+  cursor: pointer;
+  box-shadow: 0 10px 18px -8px rgba(0, 45, 80, 0.2);
+  transition: all 0.2s ease;
+}
+
+.message-card .back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 22px -8px rgba(0, 70, 120, 0.3);
+}
+
+.message-card .back-btn:active {
+  transform: translateY(0);
+}
+
+.message-card .back-btn i {
+  color: #2a7faa;
+}
+
+
+@media (max-width: 480px) {
+  .message-card {
+    padding: 2rem 1.2rem;
+    border-radius: 1.8rem;
+  }
+
+  .message-card .icon-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .message-card .icon-container i {
+    font-size: 2.8rem;
+  }
+
+  .message-card h1 {
+    font-size: 1.7rem;
+  }
+
+  .message-card .subhead {
+    font-size: 0.95rem;
+  }
+
+  .message-card .details {
+    font-size: 0.85rem;
+    padding: 0.75rem 1.1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
     body {
         overflow-x: hidden;
