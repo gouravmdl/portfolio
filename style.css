@@ -2699,8 +2699,13 @@ html {
     .aboutlist p,
     .contact-text p {
         font-size: 18px;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         line-height: 1.7;
+    }
+
+    .contact-text p {
+        font-size: 18px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: 600;
     }
 
     .skill-content {
