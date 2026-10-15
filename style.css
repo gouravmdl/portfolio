@@ -2698,7 +2698,8 @@ html {
     .abouttext p,
     .aboutlist p,
     .contact-text p {
-        font-size: 19px;
+        font-size: 18px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         line-height: 1.7;
     }
 
