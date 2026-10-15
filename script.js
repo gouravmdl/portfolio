@@ -1,173 +1,198 @@
-const backToTopBtn = document.querySelector('.back-to-top');
-const educationSection = document.querySelector('#Education');
-const header = document.querySelector('.header');
-const navbar = document.querySelector('.navbar');
-const contactForm = document.querySelector('#contact-form');
+const topBtn = document.querySelector('.back-to-top');
+const edu = document.querySelector('#Education');
+const head = document.querySelector('.header');
+const nav = document.querySelector('.navbar');
+const form = document.querySelector('#contact-form');
+const card = document.querySelector('#successCard');
+const formBox = document.querySelector('.contact-form-section');
+let showTimer;
+let hideTimer;
 
-const toggleBackToTop = () => {
-    if (!backToTopBtn || !educationSection) return;
-    const reachedLastArea = window.scrollY + window.innerHeight >= educationSection.offsetTop + 120;
-    backToTopBtn.classList.toggle('show-back-to-top', reachedLastArea);
-};
-
-const initMobileMenu = () => {
-    if (!header || !navbar) return;
-
-    let menuBtn = header.querySelector('.mobile-menu-btn');
-
-    if (!menuBtn) {
-        menuBtn = document.createElement('button');
-        menuBtn.type = 'button';
-        menuBtn.className = 'mobile-menu-btn';
-        menuBtn.setAttribute('aria-label', 'Toggle navigation menu');
-        menuBtn.innerHTML = '<span></span><span></span><span></span>';
-        header.appendChild(menuBtn);
+// Show the back-to-top button near the education section.
+function showTop() {
+    if (!topBtn || !edu) {
+        return;
     }
 
-    const syncMenuState = () => {
-        if (window.innerWidth > 768) {
-            header.classList.remove('nav-open');
-            navbar.classList.remove('mobile-open');
-            menuBtn.setAttribute('aria-expanded', 'false');
-            menuBtn.style.display = 'none';
-            navbar.style.removeProperty('display');
-            navbar.style.removeProperty('visibility');
-            navbar.style.removeProperty('opacity');
-            navbar.style.removeProperty('max-height');
-            navbar.style.removeProperty('transform');
-            navbar.style.removeProperty('pointer-events');
+    const pageBottom = window.scrollY + window.innerHeight;
+    const eduTop = edu.offsetTop + 120;
+
+    if (pageBottom >= eduTop) {
+        topBtn.classList.add('show-back-to-top');
+    } else {
+        topBtn.classList.remove('show-back-to-top');
+    }
+}
+
+// Open or close the mobile navigation.
+function setNav(btn, open) {
+    if (open) {
+        head.classList.add('nav-open');
+        nav.classList.add('mobile-open');
+        btn.setAttribute('aria-expanded', 'true');
+    } else {
+        head.classList.remove('nav-open');
+        nav.classList.remove('mobile-open');
+        btn.setAttribute('aria-expanded', 'false');
+    }
+}
+
+// Hide the menu button on larger screens.
+function sizeNav(btn) {
+    if (window.innerWidth > 768) {
+        setNav(btn, false);
+        btn.style.display = 'none';
+    } else {
+        btn.style.display = 'flex';
+
+        if (head.classList.contains('nav-open')) {
+            nav.classList.add('mobile-open');
         } else {
-            menuBtn.style.display = 'flex';
-            navbar.style.removeProperty('display');
-            navbar.style.removeProperty('visibility');
-            navbar.style.removeProperty('opacity');
-            navbar.style.removeProperty('max-height');
-            navbar.style.removeProperty('transform');
-            navbar.style.removeProperty('pointer-events');
-            navbar.classList.toggle('mobile-open', header.classList.contains('nav-open'));
+            nav.classList.remove('mobile-open');
         }
-    };
+    }
+}
 
-    const closeMenu = () => {
-        header.classList.remove('nav-open');
-        navbar.classList.remove('mobile-open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        syncMenuState();
-    };
+// Create and use the mobile menu button.
+function menu() {
+    if (!head || !nav) {
+        return;
+    }
 
-    const openMenu = () => {
-        header.classList.add('nav-open');
-        navbar.classList.add('mobile-open');
-        menuBtn.setAttribute('aria-expanded', 'true');
-        syncMenuState();
-    };
+    let btn = head.querySelector('.mobile-menu-btn');
 
-    menuBtn.addEventListener('click', () => {
-        const isOpen = header.classList.contains('nav-open');
-        isOpen ? closeMenu() : openMenu();
+    if (!btn) {
+        btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'mobile-menu-btn';
+        btn.setAttribute('aria-label', 'Toggle navigation menu');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<span></span><span></span><span></span>';
+        head.appendChild(btn);
+    }
+
+    btn.addEventListener('click', function () {
+        const open = head.classList.contains('nav-open');
+        setNav(btn, !open);
     });
 
-    navbar.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
+    const links = nav.querySelectorAll('a');
+
+    for (let i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function () {
             if (window.innerWidth <= 768) {
-                closeMenu();
+                setNav(btn, false);
             }
         });
-    });
-
-    window.addEventListener('resize', syncMenuState);
-    syncMenuState();
-};
-
-const showButtonFeedback = (button, message, type, defaultText) => {
-    button.textContent = message;
-    button.classList.add(`submit-${type}`);
-
-    setTimeout(() => {
-        button.textContent = defaultText;
-        button.classList.remove(`submit-${type}`);
-    }, 3000);
-};
-
-const initContactForm = () => {
-    if (!contactForm) return;
-
-    contactForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
-
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        const defaultButtonText = submitButton.textContent;
-        submitButton.disabled = true;
-
-        try {
-            const response = await fetch(contactForm.action, {
-                method: 'POST',
-                body: new FormData(contactForm),
-                headers: { Accept: 'application/json' }
-            });
-
-            if (!response.ok) throw new Error('Message could not be sent');
-
-            showButtonFeedback(submitButton, 'Message sent successfully', 'success', defaultButtonText);
-            contactForm.reset();
-            const formSection = contactForm.closest('.contact-form-section');
-            if (formSection) {
-                formSection.style.display = 'none';
-            }
-            if (window.showSuccessMessage) {
-                window.showSuccessMessage();
-            }
-        } catch (error) {
-            showButtonFeedback(submitButton, 'Message could not be sent', 'error', defaultButtonText);
-        } finally {
-            submitButton.disabled = false;
-        }
-    });
-};
-
-
-document.addEventListener('DOMContentLoaded', () => {
- 
-  const successCard = document.getElementById('successCard');
-  const formSection = document.querySelector('.contact-form-section');
-  let successTimer;
-  let hideTimer;
-
-
-  window.showSuccessMessage = function () {
-    if (!successCard) return;
-    window.clearTimeout(successTimer);
-    window.clearTimeout(hideTimer);
-    successCard.classList.remove('is-hiding');
-
-    if (formSection) {
-      formSection.style.display = 'none';
     }
 
-    successCard.style.display = 'block';
-    requestAnimationFrame(() => {
-      successCard.classList.add('show');
+    window.addEventListener('resize', function () {
+        sizeNav(btn);
     });
-    successTimer = window.setTimeout(window.hideSuccessMessage, 4000);
-  };
 
-  window.hideSuccessMessage = function () {
-    if (!successCard) return;
-    window.clearTimeout(successTimer);
-    successCard.classList.remove('show');
-    successCard.classList.add('is-hiding');
-    hideTimer = window.setTimeout(() => {
-      successCard.style.display = 'none';
-      successCard.classList.remove('is-hiding');
-      if (formSection) {
-        formSection.style.display = 'block';
-      }
+    sizeNav(btn);
+}
+
+// Change the submit button text for a few seconds.
+function setBtn(btn, text, type, oldText) {
+    btn.textContent = text;
+    btn.classList.add('submit-' + type);
+
+    setTimeout(function () {
+        btn.textContent = oldText;
+        btn.classList.remove('submit-' + type);
+    }, 3000);
+}
+
+// Show the message sent card.
+function showMsg() {
+    if (!card) {
+        return;
+    }
+
+    clearTimeout(showTimer);
+    clearTimeout(hideTimer);
+    card.classList.remove('is-hiding');
+
+    if (formBox) {
+        formBox.style.display = 'none';
+    }
+
+    card.style.display = 'block';
+
+    requestAnimationFrame(function () {
+        card.classList.add('show');
+    });
+
+    showTimer = setTimeout(hideMsg, 4000);
+}
+
+// Hide the message sent card and show the form again.
+function hideMsg() {
+    if (!card) {
+        return;
+    }
+
+    clearTimeout(showTimer);
+    card.classList.remove('show');
+    card.classList.add('is-hiding');
+
+    hideTimer = setTimeout(function () {
+        card.style.display = 'none';
+        card.classList.remove('is-hiding');
+
+        if (formBox) {
+            formBox.style.display = 'block';
+        }
     }, 300);
-  };
-});
+}
 
-window.addEventListener('scroll', toggleBackToTop);
-window.addEventListener('resize', toggleBackToTop);
-initMobileMenu();
-initContactForm();
-toggleBackToTop();
+// Send the contact form without leaving the page.
+async function sendForm(event) {
+    event.preventDefault();
+
+    const btn = form.querySelector('button[type="submit"]');
+
+    if (!btn) {
+        return;
+    }
+
+    const oldText = btn.textContent;
+    btn.disabled = true;
+
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                Accept: 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Message could not be sent');
+        }
+
+        setBtn(btn, 'Message sent successfully', 'success', oldText);
+        form.reset();
+        showMsg();
+    } catch (error) {
+        setBtn(btn, 'Message could not be sent', 'error', oldText);
+    } finally {
+        btn.disabled = false;
+    }
+}
+
+window.showSuccessMessage = showMsg;
+window.hideSuccessMessage = hideMsg;
+
+window.addEventListener('scroll', showTop);
+window.addEventListener('resize', showTop);
+
+menu();
+
+if (form) {
+    form.addEventListener('submit', sendForm);
+}
+
+showTop();
