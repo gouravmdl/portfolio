@@ -8,7 +8,6 @@ const formBox = document.querySelector('.contact-form-section');
 let showTimer;
 let hideTimer;
 
-// Show the back-to-top button near the education section.
 function showTop() {
     if (!topBtn || !edu) {
         return;
@@ -24,7 +23,7 @@ function showTop() {
     }
 }
 
-// Open or close the mobile navigation.
+
 function setNav(btn, open) {
     if (open) {
         head.classList.add('nav-open');
@@ -37,7 +36,6 @@ function setNav(btn, open) {
     }
 }
 
-// Hide the menu button on larger screens.
 function sizeNav(btn) {
     if (window.innerWidth > 768) {
         setNav(btn, false);
@@ -53,7 +51,7 @@ function sizeNav(btn) {
     }
 }
 
-// Create and use the mobile menu button.
+
 function menu() {
     if (!head || !nav) {
         return;
@@ -93,7 +91,6 @@ function menu() {
     sizeNav(btn);
 }
 
-// Change the submit button text for a few seconds.
 function setBtn(btn, text, type, oldText) {
     btn.textContent = text;
     btn.classList.add('submit-' + type);
@@ -104,7 +101,7 @@ function setBtn(btn, text, type, oldText) {
     }, 3000);
 }
 
-// Show the message sent card.
+
 function showMsg() {
     if (!card) {
         return;
@@ -127,7 +124,7 @@ function showMsg() {
     showTimer = setTimeout(hideMsg, 4000);
 }
 
-// Hide the message sent card and show the form again.
+
 function hideMsg() {
     if (!card) {
         return;
@@ -147,7 +144,7 @@ function hideMsg() {
     }, 300);
 }
 
-// Send the contact form without leaving the page.
+
 async function sendForm(event) {
     event.preventDefault();
 
