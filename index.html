@@ -8,7 +8,7 @@
     <meta name="description"
         content="Explore the official portfolio of Gourav Mandal—showcasing modern web applications, creative engineering projects, interactive tools, and technical experience.">
     <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=8">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="icon" type="image/x-icon" href="./Assets/favicon.ico">
@@ -48,22 +48,32 @@
                 <a href="#Contact">Hire Me</a>
             </div>
         </div>
-        <div class="container-icon">
-            <div class="home-sci">
-                <a href="https://github.com/gouravmdl" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
-                        class='bx bxl-github'></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61579150982336" target="_blank"
-                    rel="noopener noreferrer" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
-                <a href="https://www.linkedin.com/in/gouravrajmandal" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://www.instagram.com/gourav.mdl/?hl=en" target="_blank" rel="noopener noreferrer"
-                    aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
-            </div>
-        </div>
-
         <div class="photo">
             <div class="Madara">
-                <img src="Assets/Pasted image.png" alt="madara">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="Assets/mypic.png">
+                    <img src="Assets/Pasted image.png" alt="Gourav Mandal">
+                </picture>
+            </div>
+            <div class="container-icon">
+                <nav class="home-sci" aria-label="Social and contact links">
+                    <a class="home-sci-github" href="https://github.com/gouravmdl" target="_blank"
+                        rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                        <i class='bx bxl-github' aria-hidden="true"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gouravrajmandal" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                        <i class='bx bxl-linkedin' aria-hidden="true"></i>
+                    </a>
+                    <a href="mailto:gouravrajmandal566@gmail.com" aria-label="Email Gourav" title="Email">
+                        <i class='bx bx-envelope' aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/gourav.mdl/?hl=en" target="_blank"
+                        rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                        <i class='bx bxl-instagram' aria-hidden="true"></i>
+                    </a>
+                </nav>
             </div>
         </div>
     </div>
@@ -140,31 +150,41 @@
             <span></span>
         </div>
         <div class="education-container">
-            <div class="education-item">
-                <div class="education-icon">
-                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-                </div>
+            <article class="education-item">
                 <div class="education-content">
-                    <h3>Techspire College</h3>
-                    <h4>Bachelor of Science (Hons) in Information Technology</h4>
-                    <span class="education-year">2026 (Running)</span>
+                    <h3>Bachelor of Science (Hons) in Information Technology</h3>
+                    <div class="education-meta">
+                        <span class="education-year">2026 - Present</span>
+                        <span class="education-status">In progress</span>
+                    </div>
+                    <div class="education-institution">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        </div>
+                        <h4>Techspire College</h4>
+                    </div>
                     <p>Currently pursuing a Bachelor of Science (Hons) in Information Technology at Asia Pacific
                         University of Technology & Innovation (APU), with a strong focus on theoretical and practical
                         knowledge in Information Technology.</p>
                 </div>
-            </div>
-            <div class="education-item">
-                <div class="education-icon">
-                    <i class="fas fa-school" aria-hidden="true"></i>
-                </div>
+            </article>
+            <article class="education-item">
                 <div class="education-content">
-                    <h3>Dhanusha Science Campus</h3>
-                    <h4>+2 Science</h4>
-                    <span class="education-year">2023 - 2025</span>
+                    <h3>+2 Science</h3>
+                    <div class="education-meta">
+                        <span class="education-year">2023 - 2025</span>
+                        <span class="education-status">Completed</span>
+                    </div>
+                    <div class="education-institution">
+                        <div class="education-icon">
+                            <i class="fas fa-school" aria-hidden="true"></i>
+                        </div>
+                        <h4>Dhanusha Science Campus</h4>
+                    </div>
                     <p>Completed higher secondary education at Dhanusha Science Campus, with a strong focus on academic
                         growth and preparation for future career opportunities.</p>
                 </div>
-            </div>
+            </article>
         </div>
     </div>
 
