@@ -8,7 +8,7 @@
     <meta name="description"
         content="Explore the official portfolio of Gourav Mandal—showcasing modern web applications, creative engineering projects, interactive tools, and technical experience.">
     <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="style.css?v=21">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="icon" type="image/x-icon" href="./Assets/favicon.ico">
@@ -20,19 +20,23 @@
 <body>
     <div class="header">
         <img src="Assets/Gouravlogo.png" alt="GM logo">
-        <nav class="navbar">
-            <a href="#Home" class="active">Home</a>
-            <a href="#About">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#Education">Education</a>
-            <a href="#Certification">Certification</a>
-            <a href="#Resume">Resume</a>
-            <a href="#Contact">Contact</a>
+        <nav class="navbar" id="mobile-navigation">
+            <a href="#Home" class="active"><i class="bx bx-home-alt-2" aria-hidden="true"></i>Home</a>
+            <a href="#About"><i class="bx bx-user" aria-hidden="true"></i>About</a>
+            <a href="#skills"><i class="bx bx-code-alt" aria-hidden="true"></i>Skills</a>
+            <a href="#Education"><i class="bx bx-book-open" aria-hidden="true"></i>Education</a>
+            <a href="#Certification"><i class="bx bx-award" aria-hidden="true"></i>Certification</a>
+            <a href="#Resume"><i class="bx bx-file" aria-hidden="true"></i>Resume</a>
+            <a href="#Contact"><i class="bx bx-message-rounded-dots" aria-hidden="true"></i>Contact</a>
             <div class="number">
                 <i class='bx bx-phone'></i>
                 <a href="tel:+9779767718781">+977 9767718781</a>
             </div>
         </nav>
+        <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+            <i class="bx bx-sun" aria-hidden="true"></i>
+            <span>Light mode</span>
+        </button>
     </div>
     <div class="home" id="Home">
         <div class="home-content">
