@@ -9,6 +9,45 @@ const themeToggle = document.querySelector('.theme-toggle');
 let showTimer;
 let hideTimer;
 
+function typeName() {
+    const name = document.querySelector('.typing-name');
+
+    if (!name) {
+        return;
+    }
+
+    const fullName = name.textContent;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+
+    name.textContent = '';
+    let letterIndex = 0;
+    let deleting = false;
+
+    function updateName() {
+        name.textContent = fullName.slice(0, letterIndex);
+
+        if (!deleting && letterIndex === fullName.length) {
+            deleting = true;
+            setTimeout(updateName, 2000);
+            return;
+        }
+
+        if (deleting && letterIndex === 0) {
+            deleting = false;
+            setTimeout(updateName, 850);
+            return;
+        }
+
+        letterIndex += deleting ? -1 : 1;
+        setTimeout(updateName, deleting ? 75 : 120);
+    }
+
+    updateName();
+}
+
 function setMobileTheme(isLight) {
     document.body.classList.toggle('mobile-light-mode', isLight);
     if (!themeToggle) {
@@ -228,6 +267,7 @@ window.addEventListener('scroll', showTop);
 window.addEventListener('resize', showTop);
 
 menu();
+typeName();
 
 if (form) {
     form.addEventListener('submit', sendForm);

@@ -94,6 +94,7 @@ html {
     color: #A9ADB8;
     font-size: 18px;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .number a:hover{
@@ -176,10 +177,41 @@ html {
 .home-content h1 {
     font-size: 90px;
     width: 900px;
-    font-weight: 1700;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.035em;
     color: #F8FAFC;
 
+}
+
+.home-content h1 .typing-name::before {
+    content: "";
+    display: inline-block;
+    width: 0.045em;
+    height: 0.8em;
+    margin-right: 0.2em;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #ff9552, #ed6a2c);
+    box-shadow: 0 0 7px rgba(237, 106, 44, 0.22);
+    vertical-align: -0.02em;
+    animation: typing-cursor-blink 1s ease-in-out infinite;
+}
+
+@keyframes typing-cursor-blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.55;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-content h1 .typing-name::before {
+        animation: none;
+    }
 }
 
 
@@ -285,18 +317,7 @@ html {
     transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
-.home-sci a:hover {
-    color: #07111f;
-    background: #67e8f9;
-    border-color: #67e8f9;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(34, 211, 238, 0.22);
-}
 
-.home-sci a:focus-visible {
-    outline: 2px solid #67e8f9;
-    outline-offset: 3px;
-}
 
 .home-sci a.home-sci-github {
     width: auto;
