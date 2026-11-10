@@ -1,0 +1,6 @@
+# Allow search engines to visit my website.
+User-agent: *
+Allow: /
+
+# This is where my sitemap is.
+Sitemap: https://www.gouravmandal.com.np/sitemap.xml
